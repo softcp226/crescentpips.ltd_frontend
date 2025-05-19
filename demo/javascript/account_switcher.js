@@ -28,9 +28,14 @@ const switch_account = async () => {
       );
       const result = await response.json();
       console.log(result);
-     
-      if(result.error)return alert(result.errMessage)
-     window.location.replace("/dashboard.html")
+    if(result.error) {
+      return alert(result.errMessage)
+     } else {
+      result.message.account_type =="KES"?window.location.replace("/ke/dashboard.html"):window.location.replace("/dashboard.html")
+
+     }
+    //   if(result.error)return alert(result.errMessage)
+    //  window.location.replace("/dashboard.html")
 
     } catch (err) {
       alert(err.message)

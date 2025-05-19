@@ -24,15 +24,21 @@ video {
 .review-container h1 {
   color: #fff;
   padding-top: 10px;
+  padding: 10px;
 }
 .review-container > div {
-  background-color: #1a1c34;
+  background-color: #1e293b;
+  /* background-color: linear-gradient(135deg,,#0f172a); */
   padding: 10px;
   padding: 20px 25px;
   width: 300px;
   margin: 10px;
   border-radius: 10px;
+} 
+.review-container > div p{
+color:#fff9
 }
+
 .review-container > div img {
   width: 50px;
   border-radius: 50%;

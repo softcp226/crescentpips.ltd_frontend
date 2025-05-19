@@ -27,8 +27,8 @@ const submit_deposit_approval = async (form) => {
   document.querySelector("#submit").innerHTML = "processing...";
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/admin/deposit/approve",
-      // "http://localhost:5000/api/admin/deposit/approve",
+      // "https://softjovial-backend.glitch.me/api/admin/deposit/approve",
+      "http://localhost:5000/api/admin/deposit/approve",
 
       {
         method: "POST",
@@ -76,8 +76,8 @@ document.querySelector("#submit").onclick = () => {
 
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/admin/deposit_request/single",
-      // "http://localhost:5000/api/admin/deposit_request/single",
+      // "https://softjovial-backend.glitch.me/api/admin/deposit_request/single",
+      "http://localhost:5000/api/admin/deposit_request/single",
 
       {
         method: "POST",

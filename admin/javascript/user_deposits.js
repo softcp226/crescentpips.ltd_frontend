@@ -32,7 +32,8 @@ const handle_delete_deposit_request = async (btn, deposit_id) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/admin/deposit_request/delete",
+      "http://localhost:5000/api/admin/deposit_request/delete",
+      //  "https://softjovial-backend.glitch.me/api/admin/deposit_request/delete",
       {
         method: "DELETE",
         headers: { "content-type": "application/json" },
@@ -127,8 +128,8 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/admin/deposit_request",
-      // "http://localhost:5000/api/admin/deposit_request",
+      // "https://softjovial-backend.glitch.me/api/admin/deposit_request",
+      "http://localhost:5000/api/admin/deposit_request",
 
       {
         method: "POST",

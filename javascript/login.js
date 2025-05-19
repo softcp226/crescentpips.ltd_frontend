@@ -40,21 +40,22 @@ function setCookie(user, token) {
 
 
 
-function setCookie_01(user, token) {
+function setCookie_01(data) {
   // alert("called")
-  console.log(user);
+  // console.log(user);
   const d = new Date();
   d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   // document.cookie=`email=${email} ; ${expires}`
-  document.cookie = `user=${user} ; ${expires}`;
-  document.cookie = `token_01=${token} ; ${expires}`;
+  document.cookie = `user=${data.user} ; ${expires}`;
+  document.cookie = `token_01=${data.token} ; ${expires}`;
   // let navigate;
   // const params = new URLSearchParams(window.location.search)
   // for (const param of params) {
   //     navigate=param[0]
   // }
   // if(navigate)return window.location.replace(navigate)
+  if(data.country =="Kenya")return window.location.replace("/ke/complete-registration.html");
   window.location.replace("/complete-registration.html");
 }
 
@@ -62,8 +63,8 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#login").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/user/login",
-      // "http://localhost:5000/api/user/login",
+      // "https://softjovial-backend.glitch.me/api/user/login",
+      "http://localhost:5000/api/user/login",
 
       {
         method: "POST",
@@ -80,9 +81,15 @@ const loginUser = async (email, password) => {
     }
     document.querySelector("#login").innerHTML = "success";
     setCookie(result.message.user, result.token);
-    result.message.account_type =='real_account' ?window.location.replace("/dashboard.html"):window.location.replace("/demo")
+    // result.message.user_last_login =='real_account' ?window.location.replace("/dashboard.html"):window.location.replace("/demo")
     // let demo=getCookie("demo")
     // demo == 'true' ? window.location.replace("/demo"): window.location.replace("/dashboard.html")
+console.log(result)
+if ( result.message.user_last_login =='real_account') {
+  result.message.account_type =="KES" ? window.location.replace("/ke/dashboard.html"):window.location.replace("/dashboard.html")
+} else {
+  window.location.replace("/demo")
+}
 
   } catch (err) {
     document.querySelector(".errMessage").innerHTML = err.message;
@@ -102,8 +109,8 @@ const registerUser = async (email, phone_number, country) => {
   try {
     document.querySelector("#next").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/newuser/register",
-      // "http://localhost:5000/api/newuser/register",
+      // "https://softjovial-backend.glitch.me/api/newuser/register",
+      "http://localhost:5000/api/newuser/register",
 
       {
         method: "POST",
@@ -124,7 +131,7 @@ const registerUser = async (email, phone_number, country) => {
       return;
     }
     document.querySelector("#next").innerHTML = "success";
-    return setCookie_01(result.message.user, result.token);
+    return setCookie_01({user:result.message.user,country:result.message.country,token:result.token});
   } catch (err) {
     document.querySelector(".errmessage2").innerHTML = err.message;
     document.querySelector("#next").innerHTML = "try again";
