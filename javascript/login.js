@@ -127,7 +127,7 @@ const registerUser = async (email, phone_number, country) => {
       },
     );
     const result = await response.json();
-    console.log(result);
+    
     if (result.error) {
       document.querySelector(".errmessage2").innerHTML = result.errMessage;
       document.querySelector("#next").innerHTML = "try again";
