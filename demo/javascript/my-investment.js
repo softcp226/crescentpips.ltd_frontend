@@ -30,7 +30,7 @@ let handle_cancel_investment = async (button, investment) => {
     const response = await fetch(
       // "http://localhost:5000/api/user/demo/investment/cancel",
 
-      "https://softjovial-backend.glitch.me/api/user/demo/investment/cancel",
+      "https://crescentpips-backend.glitch.me/api/user/demo/investment/cancel",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -132,7 +132,7 @@ const shape_result = (investments) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/user/demo/investments/fetch",
+      "https://crescentpips-backend.glitch.me/api/user/demo/investments/fetch",
       // "http://localhost:5000/api/user/demo/investments/fetch",
 
       {

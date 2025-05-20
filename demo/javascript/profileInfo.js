@@ -29,7 +29,7 @@ function loguserout() {
       const response = await fetch(
         //   "/api/users/myaccount",
         // "http://localhost:5000/api/user/find",
-        "https://softjovial-backend.glitch.me/api/user/find",
+        "hhttps://crescentpips-backend.glitch.me/api/user/find",
       // "http://localhost:5000/api/user/find",
         // "/api/user/myaccount",
         {

@@ -10,7 +10,7 @@ const update_user = async (userInformation) => {
     document.querySelector("#saveuserBtn").innerHTML = "Proccessing...";
 
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/user/updateprofileInfo",
+      "https://crescentpips-backend.glitch.me/api/user/updateprofileInfo",
       // "http://localhost:5000/api/user/updateprofileInfo",
        {
       method: "POST",
@@ -83,7 +83,7 @@ const handle_user_result = (result) => {
     const response = await fetch(
       //   "/api/users/myaccount",
       // "http://localhost:5000/api/user/find",
-      "https://softjovial-backend.glitch.me/api/user/find",
+      "https://crescentpips-backend.glitch.me/api/user/find",
       // "/api/user/myaccount",
       {
         method: "POST",

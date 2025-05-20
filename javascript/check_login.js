@@ -7,7 +7,7 @@ if(country =="Kenya"){
   window.location.href = "/login.html";
 }else{
 
-alert("account is ok")
+// alert("account is ok")
 }
 }
 
