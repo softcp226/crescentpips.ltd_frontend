@@ -26,9 +26,9 @@ const submit_receipt = async (form) => {
   document.querySelector("#submit").innerHTML = "processing...";
   try {
     const response = await fetch(
-      "http://localhost:5000/api/user/deposit/complete",
+      // "http://localhost:5000/api/user/deposit/complete",
 
-      // "https://softjovial-backend.glitch.me/api/user/deposit/complete",
+      // "https://crescentpips-backend.glitch.me/api/user/deposit/complete",
       {
         method: "POST",
         // headers: { "content-type": "application/json" },

@@ -37,8 +37,8 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#login").innerHTML = "proccessing...";
     const response = await fetch(
-      // "https://softjovial-backend.glitch.me/api/user/login",
-      "http://localhost:5000/api/user/login",
+      "https://crescentpips-backend.glitch.me/api/user/login",
+      // "http://localhost:5000/api/user/login",
 
       {
         method: "POST",
@@ -66,8 +66,8 @@ const complete_registration = async (userInfo) => {
   try {
     document.querySelector("#register").innerHTML = "proccessing...";
     const response = await fetch(
-      // "https://softjovial-backend.glitch.me/api/new_user/complete_registration",
-      "http://localhost:5000/api/new_user/complete_registration",
+      "https://crescentpips-backend.glitch.me/api/new_user/complete_registration",
+      // "http://localhost:5000/api/new_user/complete_registration",
 
       {
         method: "POST",

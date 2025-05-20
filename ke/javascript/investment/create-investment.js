@@ -9,7 +9,7 @@ const handle_submit_request = async (form) => {
   document.querySelector("#submit").innerHTML = "proccesing...";
   try {
     const response = await fetch(
-      "https://softjovial-backend.glitch.me/api/user/create_investment",
+      "https://crescentpips-backend.glitch.me/api/user/create_investment",
       // "http://localhost:5000/api/user/create_investment",
 
       {

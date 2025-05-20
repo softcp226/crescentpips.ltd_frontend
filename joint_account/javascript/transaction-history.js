@@ -61,7 +61,7 @@ const shape_result = (userInfo) => {
   let user = getCookie("user");
   try {
     const response = await fetch(
-      "https://softjovial-joint-account-backend.glitch.me/api/user/transactions/fetch",
+      "https://crescentpips-backend.glitch.me/api/user/transactions/fetch",
       // "http://localhost:5000/api/user/transactions/fetch",
       {
         method: "POST",

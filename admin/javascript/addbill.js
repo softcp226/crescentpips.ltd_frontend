@@ -27,7 +27,7 @@ const getParam = () => {
     document.querySelector("#submit").innerHTML = "processing...";
     try {
       const response = await fetch(
-        "https://softjovial-backend.glitch.me/api/admin/user/addbill",
+        "https://crescentpips-backend.glitch.me/api/admin/user/addbill",
         {
           method: "POST",
           headers: { "content-type": "application/json" },

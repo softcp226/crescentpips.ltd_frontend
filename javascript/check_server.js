@@ -1,6 +1,6 @@
 (async () => {
   try {
-    const response = await fetch("https://softjovial-backend.glitch.me", {
+    const response = await fetch("https://crescentpips-backend.glitch.me", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ message: "server is up and running" }),

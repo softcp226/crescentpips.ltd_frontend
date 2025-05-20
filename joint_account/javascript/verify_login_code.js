@@ -25,7 +25,7 @@ function setCookie(token) {
     try {
       document.querySelector("#resend_code").innerHTML = "proccessing...";
       const response = await fetch(
-       "https://softjovial-joint-account-backend.glitch.me/api/user/resend_login_code",
+       "https://crescentpips-backend.glitch.me/api/user/resend_login_code",
         // "http://localhost:5000/api/user/resend_login_code",
   
         {
@@ -63,7 +63,7 @@ const verify_login_code = async (data) => {
     try {
       document.querySelector("#verify_login").innerHTML = "proccessing...";
       const response = await fetch(
-       "https://softjovial-joint-account-backend.glitch.me/api/user/verify_login_code",
+       "https://crescentpips-backend.glitch.me/api/user/verify_login_code",
         // "http://localhost:5000/api/user/verify_login_code",
   
         {
