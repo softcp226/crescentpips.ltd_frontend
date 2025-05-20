@@ -77,7 +77,7 @@ const shape_result = (userInfo) => {
     shape_result(result.message);
     document.querySelector(
       "#balance"
-    ).innerHTML = `**Available Balance= KES${result.user_balance
+    ).innerHTML = `**Available Balance= KSH${result.user_balance
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}**`;
   } catch (err) {

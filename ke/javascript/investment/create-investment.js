@@ -33,7 +33,7 @@ const handle_submit_request = async (form) => {
       return;
     }
     document.querySelector("#submit").innerHTML = "success";
-    window.location.href = `/action/loading.html`;
+    window.location.href = `action/loading.html`;
   } catch (err) {
     document.querySelector(".errMessage").innerHTML = err.message;
     document.querySelector("#submit").innerHTML = "try again";

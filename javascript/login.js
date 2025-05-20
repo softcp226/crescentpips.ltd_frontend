@@ -1,3 +1,6 @@
+
+
+
 const getCookie = (cname) => {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -216,3 +219,11 @@ document.querySelector(".ghost").onclick = () =>
   container.classList.remove("right-panel-active");
 
 // })
+
+
+(() => {
+  document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = "is_active=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//  alert("logged out")
+})()

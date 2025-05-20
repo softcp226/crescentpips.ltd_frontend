@@ -128,7 +128,7 @@ document.querySelector("#transaction_amount").innerHTML=`${"KES"}${data.deposit_
   let user = getCookie("user");
   try {
     const response = await fetch(
-      // "https://crescentpips-backend.glitch.me/api/user/create_deposit/fetch",
+      "https://crescentpips-backend.glitch.me/api/user/create_deposit/fetch",
       // "http://localhost:5000/api/user/create_deposit/fetch",
 
       {
@@ -141,6 +141,7 @@ document.querySelector("#transaction_amount").innerHTML=`${"KES"}${data.deposit_
         }),
       },
     );
+    // console.log(response);
     const result = await response.json();
     console.log(result);
     if (result.error)

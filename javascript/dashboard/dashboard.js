@@ -1,8 +1,12 @@
 
 const setText=(user)=>{
+  check_account_type(user.country)
 document.querySelectorAll("#user_passport").forEach(passport=>{
 passport.src= user.passport
+
 })
+
+ 
 }
 
 

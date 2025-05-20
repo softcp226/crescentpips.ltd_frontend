@@ -97,6 +97,7 @@ const createAndAppendElement = (element) => {
   const amount = document.createElement("h4");
   const method = document.createElement("h4");
   const wallet = document.createElement("h4");
+  const bnk= document.createElement("h4");
   const approveBTN = document.createElement("button");
   const delBTn = document.createElement("button");
   date.innerHTML = element.transaction_date;
@@ -108,11 +109,13 @@ const createAndAppendElement = (element) => {
     ? `${element.user.first_name} || ${element.user.last_name}`
     : "not found";
 
-  amount.innerHTML = `$${element.withdrawal_amount
+  amount.innerHTML = `${element.user.account_type=="KES" ? "KSH":"$"}${element.withdrawal_amount
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
-  method.innerHTML = element.withdrawal_method;
-  wallet.innerHTML = element.wallet;
+  method.innerHTML = element.account_number;
+  wallet.innerHTML = element.account_name;
+ bnk.innerHTML=element.transaction_bank
+// transaction_bank
 
   approveBTN.innerHTML=element.is_approved ? "Approved" : "Approve";
 approveBTN.className=element.is_approved ? "btn btn-secondary":"btn btn-primary"
@@ -160,6 +163,7 @@ approveBTN.onclick=()=>{
     amount,
     method,
     wallet,
+    bnk,
     approveBTN,
     delBTn
   );

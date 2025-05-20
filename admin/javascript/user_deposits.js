@@ -70,7 +70,7 @@ const createAndAppendElement = (element) => {
     ? `${element.user.email} || ${element.user.phone_number}`
     : "";
   currency.innerHTML = element.currency;
-  amount.innerHTML = `$${element.deposit_amount
+  amount.innerHTML = `${element.currency}${element.deposit_amount
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 
@@ -78,13 +78,16 @@ const createAndAppendElement = (element) => {
   // proof_evidence.onclick = () => window.location.replace(element.proof);
   // proof_evidence.href = element.proof || "/admin/user_deposits.html";
   // proof_evidence.className = "btn btn-secondary";
-  approve.innerHTML = "Appprove Deposit";
-  approve.className = "btn btn-primary";
+  approve.innerHTML =element.transaction.status =="success"? "Approved Deposit ":"Appprove Deposit";
+  approve.className = element.transaction.status =="success"? "btn btn-secondary":"btn btn-primary";
   del.innerHTML = "Delete deposit";
   del.className = "btn btn-danger";
   del.onclick = () => handle_delete_deposit_request(del, element._id);
-  approve.onclick = () =>
-    (window.location.href = `/admin/approve_deposit.html?${element._id}`);
+  approve.onclick = () =>{
+    if(element.transaction.status=="success")return alert("Transaction Already approved")
+ window.location.href = `/admin/approve_deposit.html?${element._id}`;
+  }
+   
   // const E_M = document.createElement("h4");
   // const final_balance = document.createElement("h4");
   // const P_L = document.createElement("h4");

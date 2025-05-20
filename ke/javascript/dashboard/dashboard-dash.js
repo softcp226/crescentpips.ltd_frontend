@@ -2,19 +2,19 @@ const setText = (user) => {
   document.querySelectorAll("#user_passport").forEach((passport) => {
     passport.src = user.passport;
   });
-  document.querySelector("#final_balance").innerHTML = `KES${user.final_balance
+  document.querySelector("#final_balance").innerHTML = `KSH${user.final_balance
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
-  document.querySelector("#profit_loss").innerHTML = `KES${user.profit_loss
+  document.querySelector("#profit_loss").innerHTML = `KSH${user.profit_loss
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
   document.querySelector(
     "#active_investment"
-  ).innerHTML = `KES${user.active_investment
+  ).innerHTML = `KSH${user.active_investment
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
 
-  document.querySelector("#referral_bonus").innerHTML = `KES${user.referral_bonus
+  document.querySelector("#referral_bonus").innerHTML = `KSH${user.referral_bonus
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
   // console.log("user", user);
