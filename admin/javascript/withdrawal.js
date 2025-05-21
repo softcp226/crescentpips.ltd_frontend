@@ -109,9 +109,14 @@ const createAndAppendElement = (element) => {
     ? `${element.user.first_name} || ${element.user.last_name}`
     : "not found";
 
-  amount.innerHTML = `${element.user.account_type=="KES" ? "KSH":"$"}${element.withdrawal_amount
+   amount.innerHTML = element.withdrawal_amount
     .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    if(element.user){ amount.innerHTML = `${element.user.account_type=="KES" ? "KSH":"$"}${element.withdrawal_amount
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;}
+console.log(element)
   method.innerHTML = element.account_number;
   wallet.innerHTML = element.account_name;
  bnk.innerHTML=element.transaction_bank
