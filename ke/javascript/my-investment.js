@@ -84,7 +84,7 @@ const createAndAppendElement = (element) => {
 
   TDH4.innerHTML = element.transaction_date;
   REFH4.innerHTML = element.refrence_number;
-  AMTH4.innerHTML = `$${element.amount
+  AMTH4.innerHTML = `KSH${element.amount
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
   RTH4.innerHTML =element.return_time;
@@ -94,7 +94,7 @@ const createAndAppendElement = (element) => {
   //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;
 
   // PT_LS.style.color = element.show_loss ? "red" : "green";
-  EPH4.innerHTML = `$${element.pending_profit.toString()
+  EPH4.innerHTML = `KSH${element.pending_profit.toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;;
     EPH4.style.color="green"
   AN.innerHTML = "Cancel";

@@ -5,7 +5,7 @@ const write_percentage = (percentage, earning) => {
 const show_err = () => {
   document.querySelector("#amount").style.border = "2px solid red";
   document.querySelector(".errMessage").innerHTML =
-    "Trading amount can not be less than $25";
+    "Trading amount can not be less than KSH100";
 };
 const disable_show_err = () => {
   document.querySelector("#amount").style.border = "2px solid #fff";
@@ -26,7 +26,7 @@ const handle_request = () => {
   if (!return_time.value) return;
   switch (return_time.value) {
     case "daily_return":
-      if (parseInt(amount.value) < 25) return show_err();
+      if (parseInt(amount.value) < 100) return show_err();
       disable_show_err();
       profit = Math.round(amount.value / 100 * generate_percentage());
       handle_submit_request({
