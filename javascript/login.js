@@ -191,6 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!country.value) return (country.style.border = errorColor);
 
     document.querySelector(".errmessage2").innerHTML = "";
+
+    document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie = "is_active=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  
     registerUser(email.value, phoneNumber.value, country.value);
   };
 
@@ -221,9 +226,9 @@ document.querySelector(".ghost").onclick = () =>
 // })
 
 
-(() => {
-  document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  document.cookie = "is_active=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-//  alert("logged out")
-})()
+// (() => {
+//   document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//   document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//   document.cookie = "is_active=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+// //  alert("logged out")
+// })()
