@@ -78,8 +78,9 @@ document.querySelector("#submit").onclick = () => {
     token: checkCookie("token"),
     user: checkCookie("user"),
     withdrawal_amount: withdrawal_amount.value,
-   transaction_bank: withdrawal_method.value,
+     transaction_bank: withdrawal_method.value,
      account_name: wallet.value,
+     account_number:11111
   });
 };
 
