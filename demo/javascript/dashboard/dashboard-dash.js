@@ -45,7 +45,7 @@ const getCookie = (cname) => {
   const token = getCookie("token");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/fetch_demo_account",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/fetch_demo_account",
       //  "http://localhost:5000/api/user/fetch_demo_account",
       {
         method: "POST",

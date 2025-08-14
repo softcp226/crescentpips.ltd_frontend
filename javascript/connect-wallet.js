@@ -10,9 +10,9 @@ const handle_connect_wallet = async (form) => {
     try {
       document.querySelector("#connect_wallet").innerHTML = "proccessing...";
       const response = await fetch(
-        // "https://crescentpips-backend.glitch.me/api/user/create_deposit",
+        // "/api/user/create_deposit",
         // "http://localhost:5000/api/user/savewallet",
-       "https://crescentpips-backend.glitch.me/api/user/savewallet",
+       "https://crescentpipsltdbackend-production.up.railway.app/api/user/savewallet",
   
         {
           method: "POST",

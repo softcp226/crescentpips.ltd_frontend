@@ -32,7 +32,7 @@ const handle_cancel_investment = async (btn, investment) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/admin/investment/cancel",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/admin/investment/cancel",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -122,7 +122,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/admin/investment/fetch",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/admin/investment/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -24,7 +24,7 @@ const handle_withdrawal = async (form) => {
   try {
     document.querySelector("#submit").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/withdraw",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/withdraw",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

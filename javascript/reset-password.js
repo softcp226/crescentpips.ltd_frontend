@@ -15,7 +15,7 @@ const change_password = async (user_form) => {
   document.querySelector("#submit").innerHTML = "proccessing...";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/password/reset",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/password/reset",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

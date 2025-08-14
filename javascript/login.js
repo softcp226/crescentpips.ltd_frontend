@@ -66,7 +66,7 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#login").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/login",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/login",
       // "http://localhost:5000/api/user/login",
 
       {
@@ -82,17 +82,47 @@ const loginUser = async (email, password) => {
       document.querySelector("#login").innerHTML = "try again";
       return;
     }
-    document.querySelector("#login").innerHTML = "success";
-    setCookie(result.message.user, result.token);
+if(result.message.user.government_ID == null){
+
+  // setCookie(result.message.user._id, result.token);
+  // window.location.replace("/government_ID.html")
+  // return
+
+  if(result.message.user.account_type =="KES" ){
+  setCookie(result.message.user._id, result.token);
+  window.location.replace("/ke/government_ID.html")
+  return
+}else{
+    setCookie(result.message.user._id, result.token);
+
+window.location.replace("/government_ID.html")
+return
+}
+}
+
+if(result.message.user.account_type =="KES" ){
+  setCookie(result.message.user._id, result.token);
+  window.location.replace("/ke/dashboard.html")
+  return
+}else{
+    setCookie(result.message.user._id, result.token);
+
+window.location.replace("/dashboard.html")
+}
+
+
+    // if(result.user.government_ID =="")
+    // document.querySelector("#login").innerHTML = "success";
+    // setCookie(result.message.user, result.token);
     // result.message.user_last_login =='real_account' ?window.location.replace("/dashboard.html"):window.location.replace("/demo")
     // let demo=getCookie("demo")
     // demo == 'true' ? window.location.replace("/demo"): window.location.replace("/dashboard.html")
-console.log(result)
-if ( result.message.user_last_login =='real_account') {
-  result.message.account_type =="KES" ? window.location.replace("/ke/dashboard.html"):window.location.replace("/dashboard.html")
-} else {
-  window.location.replace("/demo")
-}
+// console.log(result)
+// if ( result.message.user_last_login =='real_account') {
+//   result.message.account_type =="KES" ? window.location.replace("/ke/dashboard.html"):window.location.replace("/dashboard.html")
+// } else {
+//   window.location.replace("/demo")
+// }
 
   } catch (err) {
     document.querySelector(".errMessage").innerHTML = err.message;
@@ -112,7 +142,7 @@ const registerUser = async (email, phone_number, country) => {
   try {
     document.querySelector("#next").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/newuser/register",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/newuser/register",
       // "http://localhost:5000/api/newuser/register",
 
       {

@@ -39,7 +39,7 @@ const loginUser = async (email, password) => {
   try {
     document.querySelector("#login").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/login",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/login",
       // "http://localhost:5000/api/user/login",
 
       {
@@ -76,7 +76,7 @@ const registerUser = async (email, phone_number, country) => {
   try {
     document.querySelector("#next").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/newuser/register",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/newuser/register",
       // "http://localhost:5000/api/newuser/register",
 
       {

@@ -62,7 +62,7 @@ const shape_result = (userInfo) => {
   try {
     const response = await fetch(
       // "http://localhost:5000/api/user/transactions/fetch",
-      "https://crescentpips-backend.glitch.me/api/user/transactions/fetch",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/transactions/fetch",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -19,7 +19,7 @@ const handle_withdrawal = async (form) => {
   try {
     document.querySelector("#submit").innerHTML = "proccessing...";
     const response = await fetch(
-      "https://softjovial-org-backend.glitch.me/api/user/withdraw",
+      "https://crescentpips-ltd-backend.onrender.com/api/user/withdraw",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

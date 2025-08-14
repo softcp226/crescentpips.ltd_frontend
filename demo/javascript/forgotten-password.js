@@ -4,7 +4,7 @@ const fetch_recover_password = async (email) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/password/forgotten",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/password/forgotten",
       // "http://localhost:5000/api/password/forgotten",
       {
         method: "POST",

@@ -33,7 +33,7 @@ const handle_delete_deposit_request = async (btn, deposit_id) => {
   try {
     const response = await fetch(
       // "http://localhost:5000/api/admin/deposit_request/delete",
-       "https://crescentpips-backend.glitch.me/api/admin/deposit_request/delete",
+       "https://crescentpipsltdbackend-production.up.railway.app/api/admin/deposit_request/delete",
       {
         method: "DELETE",
         headers: { "content-type": "application/json" },
@@ -131,7 +131,7 @@ const setText = (userInfo) => {
   let admin = getCookie("admin");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/admin/deposit_request",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/admin/deposit_request",
       // "http://localhost:5000/api/admin/deposit_request",
 
       {

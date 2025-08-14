@@ -49,7 +49,7 @@ const setText2 = (user) => {
   const token = getCookie("token");
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/find",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/find",
       // "http://localhost:5000/api/user/find",
 
       {

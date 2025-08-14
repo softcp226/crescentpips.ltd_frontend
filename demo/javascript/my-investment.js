@@ -30,7 +30,7 @@ let handle_cancel_investment = async (button, investment) => {
     const response = await fetch(
       // "http://localhost:5000/api/user/demo/investment/cancel",
 
-      "https://crescentpips-backend.glitch.me/api/user/demo/investment/cancel",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/demo/investment/cancel",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

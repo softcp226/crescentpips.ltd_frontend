@@ -9,8 +9,8 @@ const handle_submit_request = async (form) => {
   document.querySelector("#submit").innerHTML = "proccesing...";
   try {
     const response = await fetch(
-      "https://crescentpips-backend.glitch.me/api/user/create_investment",
-      // "http://localhost:5000/api/user/create_investment",
+      "https://crescentpipsltdbackend-production.up.railway.app/api/user/create_investment",
+      // "http://localhost:5000https://crescentpipsltdbackend-production.up.railway.app/user/create_investment",
 
       {
         method: "POST",
