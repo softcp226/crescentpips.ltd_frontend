@@ -11,7 +11,8 @@ const update_user = async (userInformation) => {
 
     const response = await fetch(
       // "http://localhost:5000/api/user/updateprofileInfo", 
-    "https://crescentpipsltdbackend-production.up.railway.app/api/user/updateprofileInfo",
+      "https://my-node-app-2d5o.onrender.com"
+    // "https://crescentpipsltdbackend-production.up.railway.app/api/user/updateprofileInfo",
     {
       method: "POST",
       headers: { "content-type": "application/json" },

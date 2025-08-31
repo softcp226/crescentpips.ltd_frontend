@@ -109,12 +109,14 @@ const createAndAppendElement = (element) => {
     ? `${element.user.first_name} || ${element.user.last_name}`
     : "not found";
 
- if (element.user.newuser == true) {
+if(element.user.newuser){
+   if (element.user.newuser == true) {
   withdrawerNames.style.fontWeight="bold"
   withdrawerNames.style.backgroundColor="#f0f0f0"
   withdrawerNames.style.padding="5px"  
  withdrawerNames.style.borderRadius="5px"
  }
+}
    amount.innerHTML = element.withdrawal_amount
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
