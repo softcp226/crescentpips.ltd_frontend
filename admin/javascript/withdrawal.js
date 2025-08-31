@@ -109,7 +109,7 @@ const createAndAppendElement = (element) => {
     ? `${element.user.first_name} || ${element.user.last_name}`
     : "not found";
 
-if(element.user.newuser){
+if(element.user){
    if (element.user.newuser == true) {
   withdrawerNames.style.fontWeight="bold"
   withdrawerNames.style.backgroundColor="#f0f0f0"
