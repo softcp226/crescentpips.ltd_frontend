@@ -1,16 +1,4 @@
 
-const check_account_type=(country)=>{
-if(country =="Kenya"){
-   document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  document.cookie = "is_active=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.href = "/login.html";
-}else{
-
-// alert("account is ok")
-}
-}
-
 const look_for_user = (cname) => {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
