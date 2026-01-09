@@ -1,3 +1,4 @@
+
 function setCookie(user, token) {
     // alert("called")
     console.log(user);
@@ -13,7 +14,7 @@ function setCookie(user, token) {
     //   navigate = param[0];
     // }
     // if (navigate) return window.location.replace(navigate);
-   window.location.replace("/ke/government_ID.html")
+   window.location.replace("/ke/dashboard.html");
   }
 
 // function setCookie_01(user, token) {
@@ -71,8 +72,9 @@ const complete_registration = async (userInfo) => {
 
       {
         method: "POST",
-        //   headers: { "content-type": "application/json" },
-        body: userInfo,
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(userInfo),
+
       },
     );
     const result = await response.json();
@@ -88,10 +90,10 @@ const complete_registration = async (userInfo) => {
     
       document.querySelector(".errmessage2").innerHTML = err.message;
     document.querySelector("#register").innerHTML = "try again";
-  err.message == "Unexpected token < in JSON at position 0"
-    ? (document.querySelector(".errmessage2").innerHTML =
-        "Please make sure what you are trying to submit is an image and try again")
-    : (document.querySelector(".errmessage2").innerHTML = err.message);
+  // err.message == "Unexpected token < in JSON at position 0"
+  //   ? (document.querySelector(".errmessage2").innerHTML =
+  //       "Please make sure what you are trying to submit is an image and try again")
+  //   : (document.querySelector(".errmessage2").innerHTML = err.message);
 
   
   }
@@ -165,12 +167,12 @@ let token_01 = getCookie("token_01");
     event.preventDefault();
     const first_name = document.querySelector("#first_name");
     const last_name = document.querySelector("#last_name");
-    let passport = document.querySelector("#passport");
+    // let passport = document.querySelector("#passport");
     let password = document.querySelector("#password");
     let password2 = document.querySelector("#password2");
     if (!first_name.value) return (first_name.style.border = errorColor);
     if (!last_name.value) return (last_name.style.border = errorColor);
-    if (!passport.files[0]) return (passport.style.border = errorColor);
+    // if (!passport.files[0]) return (passport.style.border = errorColor);
     if (!password.value) return (password.style.border = errorColor);
     if (!password2.value) return (password2.style.border = errorColor);
     if (password.value != password2.value)
@@ -179,16 +181,16 @@ let token_01 = getCookie("token_01");
     if (password.value.length < 8)
       return (document.querySelector("#pwd_error").innerHTML =
         "Password must be greater than 8 characters");
-    
 
-    const formdata = new FormData();
-    formdata.append("user", user);
-    formdata.append("token_01", token_01);
-    formdata.append("first_name", first_name.value);
-    formdata.append("last_name", last_name.value);
-    formdata.append("passport", passport.files[0]);
-    formdata.append("password", password.value);
-    complete_registration(formdata);
+    complete_registration({user,token_01,first_name:first_name.value,last_name:last_name.value,password:password.value});
+    // const formdata = new FormData();
+    // formdata.append("user", user);
+    // formdata.append("token_01", token_01);
+    // formdata.append("first_name", first_name.value);
+    // formdata.append("last_name", last_name.value);
+    // formdata.append("passport", passport.files[0]);
+    // formdata.append("password", password.value);
+    // complete_registration(formdata);
   };
 
   document.querySelectorAll("input").forEach((input) => {

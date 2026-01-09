@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Government ID</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0c0e28, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 35px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      color: #ffffff;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 25px;
+      color: #e0e0e0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .note {
+      font-size: 12px;
+      color: #d1d5db;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      background-color: #ffffff;
+      color: #4f46e5;
+      font-weight: bold;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Verify Your Identity</h2>
+    <p>Please upload a valid government-issued ID for account verification.</p>
+
+    <form>
+     
+      <div class="form-group">
+        <label for="government_id">Upload Government ID</label>
+        <input type="file" id="government_id" name="government_id" accept=".jpg,.jpeg,.png,.pdf" required />
+       <div class="errMessage" id="errMessage" style="color: red;"></div>
+        <p class="note">Accepted formats: JPG, PNG, or PDF — Max 5MB</p>
+      </div>
+
+      <button id="submit" type="submit" class="submit-btn">Submit ID</button>
+    </form>
+    <br>
+    <a id="upload_later" style="color: #fff;  text-align: center; cursor: pointer; display: none;"> UPLOAD LATER</a>
+  </div>
+
+  <script src="javascript/government_ID.js"></script>
+</body>
+</html>

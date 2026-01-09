@@ -43,7 +43,7 @@ function setCookie(user, token) {
 
 
 
-function setCookie_01(data) {
+function  setCookie01(data) {
   // alert("called")
   // console.log(user);
   const d = new Date();
@@ -52,14 +52,23 @@ function setCookie_01(data) {
   // document.cookie=`email=${email} ; ${expires}`
   document.cookie = `user=${data.user} ; ${expires}`;
   document.cookie = `token_01=${data.token} ; ${expires}`;
-  // let navigate;
-  // const params = new URLSearchParams(window.location.search)
-  // for (const param of params) {
-  //     navigate=param[0]
-  // }
-  // if(navigate)return window.location.replace(navigate)
-  if(data.country =="Kenya")return window.location.replace("/ke/complete-registration.html");
-  window.location.replace("/complete-registration.html");
+  
+  switch(data.country){
+    case "Uganda":
+      window.location.href="/ug/complete-registration.html";
+      break;;       
+    case "Tanzania":
+     window.location.href="/tz/complete-registration.html";
+ 
+      break;
+
+    default:
+      window.location.href="/ke/complete-registration.html";
+  
+      break;
+  }
+  // if(data.country =="Kenya")return window.location.replace("/ke/complete-registration.html");
+  // window.location.replace("/complete-registration.html");
 }
 
 const loginUser = async (email, password) => {
@@ -82,33 +91,49 @@ const loginUser = async (email, password) => {
       document.querySelector("#login").innerHTML = "try again";
       return;
     }
-if(result.message.user.government_ID == null){
 
-  // setCookie(result.message.user._id, result.token);
-  // window.location.replace("/government_ID.html")
-  // return
+    switch(result.message.user.country){
+      case "Uganda":
+        // result.message.user.account_type ="UGX"
+         setCookie(result.message.user._id, result.token);
+         window.location.replace("/ug/dashboard.html")
+        break;;       
+      case "Tanzania":
+        // result.message.user.account_type ="TZS"
+         setCookie(result.message.user._id, result.token);
+         window.location.replace("/tz/dashboard.html")    
+        break;  
+      default:  
+         setCookie(result.message.user._id, result.token);
+         window.location.replace("/ke/dashboard.html")
+      break;
+    }
+// if(result.message.user.government_ID == null){
 
-  if(result.message.user.account_type =="KES" ){
-  setCookie(result.message.user._id, result.token);
-  window.location.replace("/ke/government_ID.html")
-  return
-}else{
-    setCookie(result.message.user._id, result.token);
+//   // setCookie(result.message.user._id, result.token);
+//   // window.location.replace("/government_ID.html")
+//   // return
 
-window.location.replace("/government_ID.html")
-return
-}
-}
+//   if(result.message.user.account_type =="KES" ){
+//   setCookie(result.message.user._id, result.token);
+//   window.location.replace("/ke/government_ID.html")
+//   return
+// }else{
+//     setCookie(result.message.user._id, result.token);
 
-if(result.message.user.account_type =="KES" ){
-  setCookie(result.message.user._id, result.token);
-  window.location.replace("/ke/dashboard.html")
-  return
-}else{
-    setCookie(result.message.user._id, result.token);
+// window.location.replace("/government_ID.html")
+// return
+// }
 
-window.location.replace("/dashboard.html")
-}
+// if(result.message.user.account_type =="KES" ){
+//   setCookie(result.message.user._id, result.token);
+//   window.location.replace("/ke/dashboard.html")
+//   return
+// }else{
+//     setCookie(result.message.user._id, result.token);
+
+// window.location.replace("/dashboard.html")
+// }
 
 
     // if(result.user.government_ID =="")
@@ -164,7 +189,7 @@ const registerUser = async (email, phone_number, country) => {
       return;
     }
     document.querySelector("#next").innerHTML = "success";
-    return setCookie_01({user:result.message.user,country:result.message.country,token:result.token});
+    return  setCookie01({user:result.message.user,country:result.message.country,token:result.token});
   } catch (err) {
     document.querySelector(".errmessage2").innerHTML = err.message;
     document.querySelector("#next").innerHTML = "try again";
