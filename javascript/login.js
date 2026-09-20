@@ -56,7 +56,11 @@ function  setCookie01(data) {
   switch(data.country){
     case "Uganda":
       window.location.href="/ug/complete-registration.html";
-      break;;       
+      break; 
+      case "Kenya":
+      window.location.href="/ke/complete-registration.html";
+      break;  
+
     case "Tanzania":
      window.location.href="/tz/complete-registration.html";
  
@@ -92,63 +96,43 @@ const loginUser = async (email, password) => {
       return;
     }
 
-    switch(result.message.user.country){
-      case "Uganda":
-        // result.message.user.account_type ="UGX"
-         setCookie(result.message.user._id, result.token);
-         window.location.replace("/ug/dashboard.html")
-        break;;       
-      case "Tanzania":
-        // result.message.user.account_type ="TZS"
-         setCookie(result.message.user._id, result.token);
-         window.location.replace("/tz/dashboard.html")    
-        break;  
-      default:  
-         setCookie(result.message.user._id, result.token);
-         window.location.replace("/ke/dashboard.html")
+
+try {
+  const country = result.message.user.country;
+
+  let dashboard;
+
+  switch (country) {
+    case 'Uganda':
+      dashboard = '/ug/dashboard.html';
       break;
-    }
-// if(result.message.user.government_ID == null){
 
-//   // setCookie(result.message.user._id, result.token);
-//   // window.location.replace("/government_ID.html")
-//   // return
+    case 'Kenya':
+      dashboard = '/ke/dashboard.html';
+      break;
 
-//   if(result.message.user.account_type =="KES" ){
-//   setCookie(result.message.user._id, result.token);
-//   window.location.replace("/ke/government_ID.html")
-//   return
-// }else{
-//     setCookie(result.message.user._id, result.token);
+    case 'Tanzania':
+      dashboard = '/tz/dashboard.html';
+      break;
 
-// window.location.replace("/government_ID.html")
-// return
-// }
+    default:
+      dashboard = '/tz/dashboard.html';
+      break;
+  }
 
-// if(result.message.user.account_type =="KES" ){
-//   setCookie(result.message.user._id, result.token);
-//   window.location.replace("/ke/dashboard.html")
-//   return
-// }else{
-//     setCookie(result.message.user._id, result.token);
+  // Save cookie
+  setCookie(result.message.user._id, result.token);
 
-// window.location.replace("/dashboard.html")
-// }
+  // Redirect after setCookie has completed
+  window.location.replace(dashboard);
+} catch (err) {
+  document.querySelector('.errMessage').innerHTML = err.message;
+  document.querySelector('#login').innerHTML = 'try again';
+}
 
 
-    // if(result.user.government_ID =="")
-    // document.querySelector("#login").innerHTML = "success";
-    // setCookie(result.message.user, result.token);
-    // result.message.user_last_login =='real_account' ?window.location.replace("/dashboard.html"):window.location.replace("/demo")
-    // let demo=getCookie("demo")
-    // demo == 'true' ? window.location.replace("/demo"): window.location.replace("/dashboard.html")
-// console.log(result)
-// if ( result.message.user_last_login =='real_account') {
-//   result.message.account_type =="KES" ? window.location.replace("/ke/dashboard.html"):window.location.replace("/dashboard.html")
-// } else {
-//   window.location.replace("/demo")
-// }
 
+  
   } catch (err) {
     document.querySelector(".errMessage").innerHTML = err.message;
     document.querySelector("#login").innerHTML = "try again";
