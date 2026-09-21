@@ -103,7 +103,7 @@ const shape_result = (data) => {
   nextbtn.href = `/ke/submit-receipt.html?${getDepositID()}`;
 
 
-  text_h3.innerHTML = `copy the bank details above and trasnfer ${"KES"}${data.deposit_amount.toString()
+  text_h3.innerHTML = `copy the bank details above and transfer ${"KES"}${data.deposit_amount.toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0 to the bank details and click "i have made payment" button to submit payment screenshot `;
  
 
